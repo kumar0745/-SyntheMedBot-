@@ -11,7 +11,7 @@ The inspected application entry point is app.py. It builds a Streamlit interface
 ## Requirements
 
 - Python 3.10+ (verify compatibility with the selected Google SDK version)
-- A Gemini API key configured locally as an environment variable
+- A Gemini API key configured locally in .env as api_key1 (see .env.example)
 
 ## Setup
 
@@ -24,7 +24,8 @@ python -m venv .venv
 .\\.venv\\Scripts\\Activate.ps1
 python -m pip install --upgrade pip
 pip install -r requirements.txt
-$env:GOOGLE_API_KEY = "your-key"
+Copy-Item .env.example .env
+# Edit .env and set api_key1 to your rotated Gemini key
 streamlit run app.py
 ```
 
@@ -35,7 +36,8 @@ python -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 pip install -r requirements.txt
-export GOOGLE_API_KEY="your-key"
+cp .env.example .env
+# Edit .env and set api_key1 to your rotated Gemini key
 streamlit run app.py
 ```
 
